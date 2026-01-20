@@ -38,7 +38,8 @@ class User(models.Model):
     photo = fields.CharField(max_length=255, null=True, blank=True)
     phone = fields.CharField(max_length=255, null=True, blank=True)
     department = fields.CharField(max_length=255, null=True, blank=True)
-    organization = fields.CharField(max_length=255, null=True, blank=True)
+    #organization = fields.CharField(max_length=255, null=True, blank=True)
+    organization = fields.ForeignKeyField("models.Organization", related_name="users", null=True, blank=True)
     report_to = fields.ForeignKeyField("models.User", related_name="report_to_user", blank=True, null=True)
 
     role = fields.CharEnumField(UserRole)
