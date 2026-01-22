@@ -14,7 +14,7 @@ class Organization(models.Model):
     created_at = fields.DatetimeField(auto_now_add=True)
 
     users: fields.ReverseRelation["User"]
-    subscription: fields.ReverseRelation["Subscription"]
+    subscriptions: fields.ReverseRelation["Subscription"]
 
     class Meta:
         table = "organizations"
